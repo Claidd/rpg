@@ -10,21 +10,23 @@ import com.mygdx.game.model.Monster;
 public class MyGdxGame extends ApplicationAdapter {
 
 	/*
-	=== Идеи ===
-	1. + Движение по пикселям
-	2. Преграды
-	3. Анимация
-	4. Снаряды, выстрелы
-	5. Монстр двигается хаотично
-	6. Преследование монстром героя
-	7. Аптечки, Монеты, Зелья
-	8. Параметры героя/монстра (хп, крит, опыт, скорость)
-	9. Опыт героя
-	10. Оружие
-	11. Урони игры
-	12. Финальный босс
-	13. Драка с монстрами.
-	 */
+    === Идеи ===
+    1. + Движение по пикселям
+    2. Преграды
+    3. Анимация
+    4. Снаряды, выстрелы
+    5. Монстр двигается хаотично
+    6. Преследование монстром героя
+    7. Аптечки, Монеты, Зелья
+    8. Параметры героя/монстра (хп, крит, опыт, скорость)
+    9. Опыт героя
+    10. Оружие
+    11. Урони игры
+    12. Финальный босс
+    13. Драка с монстрами
+    14. Полоска здоровья
+    15. Привязать логику к хп героя
+     */
 	SpriteBatch batch;
 	Hero hero;
 	Monster monster;
@@ -54,7 +56,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		monster.render(batch);
 		batch.end();
 	}
-	
+
 	@Override
 	public void dispose () {
 		batch.dispose();
@@ -63,5 +65,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	public void update(float dt){
 		hero.update(dt);
 		monster.update(dt);
+		float dst = (float) Math.sqrt((hero.getX() - monster.getX()) * (hero.getX() - monster.getX()));
+		if (dst < 40.0f) hero.takeDamage(dt * 10.0f);
 	}
 }
