@@ -28,33 +28,20 @@ public class MyGdxGame extends ApplicationAdapter {
     15. Привязать логику к хп героя
      */
 	SpriteBatch batch;
-	Hero hero;
-	Monster monster;
+	GameScreen gameScreen;
 
-	public Hero getHero() {
-		return hero;
-	}
 
-	public Monster getMonster() {
-		return monster;
-	}
 
 	@Override
 	public void create () {
-		batch = new SpriteBatch();
-		hero = new Hero();
-		monster = new Monster(this);
+		this.batch = new SpriteBatch();
+		this.gameScreen = new GameScreen(batch);
+		this.gameScreen.create();
 	}
 
 	@Override
 	public void render () {
-		float dt = Gdx.graphics.getDeltaTime();
-		update(dt);
-		ScreenUtils.clear(0, 0.4f, 0, 1);
-		batch.begin();
-		hero.render(batch);
-		monster.render(batch);
-		batch.end();
+		gameScreen.render();
 	}
 
 	@Override
@@ -63,9 +50,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	}
 
 	public void update(float dt){
-		hero.update(dt);
-		monster.update(dt);
-		float dst = (float) Math.sqrt((hero.getX() - monster.getX()) * (hero.getX() - monster.getX()));
-		if (dst < 40.0f) hero.takeDamage(dt * 10.0f);
+
 	}
 }
