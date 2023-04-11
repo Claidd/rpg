@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d73d0ac-ab8d-44d2-9578-fbdae8e779c4" name="Changes" comment="4. Refactoring and add GameScreen">
-      <change afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/GameCharacter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Monster.java" afterDir="false" />
+    <list default="true" id="1d73d0ac-ab8d-44d2-9578-fbdae8e779c4" name="Changes" comment="5. Refactoring and add AbstractClass Characters">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/GameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/model/Monster.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Игровые объекты.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Игровые объекты.psd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Monster.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1681195002617</updated>
       <workItem from="1681195003896" duration="8837000" />
-      <workItem from="1681214945753" duration="5882000" />
+      <workItem from="1681214945753" duration="8936000" />
     </task>
     <task id="LOCAL-00001" summary="1. Create hero and his moving">
       <created>1681207850610</created>
@@ -108,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681216086279</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="5. Refactoring and add AbstractClass Characters">
+      <created>1681227719985</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681227719985</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +133,7 @@
     <MESSAGE value="2. Add Monster and moving come hero if radius &lt; 200" />
     <MESSAGE value="3. Add HP bar and Damage from Skelet" />
     <MESSAGE value="4. Refactoring and add GameScreen" />
-    <option name="LAST_COMMIT_MESSAGE" value="4. Refactoring and add GameScreen" />
+    <MESSAGE value="5. Refactoring and add AbstractClass Characters" />
+    <option name="LAST_COMMIT_MESSAGE" value="5. Refactoring and add AbstractClass Characters" />
   </component>
 </project>

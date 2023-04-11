@@ -46,11 +46,5 @@ public class GameScreen {
     public void update(float dt){
         hero.update(dt);
         monster.update(dt);
-
-        if (hero.getPosition().dst(monster.getPosition()) < 40) {
-            hero.takeDamage(dt * 10.0f);
-        }
-//        float dst = (float) Math.sqrt((hero.getX() - monster.getX()) * (hero.getX() - monster.getX()));
-//        if (dst < 40.0f) hero.takeDamage(dt * 10.0f);
     }
 }

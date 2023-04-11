@@ -24,9 +24,13 @@ public class Hero extends GameCharacter{
     @Override
     public void render(SpriteBatch batch){
         batch.draw(texture,position.x - 40.0f, position.y - 40.0f);
+
+        batch.setColor(0,0,0,1);
+        // обновление уровня hp.
+        batch.draw(textureHp, position.x - 42, position.y + 90 - 42, 83, 10);
         batch.setColor(1,0,0,1);
-        // обновление урона.
-        batch.draw(textureHp, position.x - 40.0f, position.y + 90 - 40.0f, 0,0, hp, 5,1,1,0,0,0,80,5,false,false);
+        // обновление уровня hp.
+        batch.draw(textureHp, position.x - 40, position.y + 90 - 40, 0,0, hp / hpMax * 80, 5,1,1,0,0,0,80,5,false,false);
         batch.setColor(1,1,1,1);
     }
 
