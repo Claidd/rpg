@@ -6,32 +6,42 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Hero {
-    private Texture texture;
+    private final Texture texture;
     private float x;
     private float y;
+    private final float speed;
+
+    public float getX() {
+        return x;
+    }
+
+    public float getY() {
+        return y;
+    }
 
     public Hero() {
-        texture = new Texture("knight.png");
-        x = 200.0f;
-        y = 200.0f;
+        this.texture = new Texture("knight.png");
+        this.x = 200.0f;
+        this.y = 200.0f;
+        this.speed = 100.0f;
     }
 
     public void render(SpriteBatch batch){
         batch.draw(texture,x,y);
     }
 
-    public void update(){
+    public void update(float dt){
         if (Gdx.input.isKeyPressed(Input.Keys.W)){
-            y += 1;
+            y += speed * dt;
         }
         if (Gdx.input.isKeyPressed(Input.Keys.S)){
-            y -= 1;
+            y -= speed * dt;
         }
         if (Gdx.input.isKeyPressed(Input.Keys.D)){
-            x += 1;
+            x += speed * dt;
         }
         if (Gdx.input.isKeyPressed(Input.Keys.A)){
-            x -= 1;
+            x -= speed * dt;
         }
     }
 }

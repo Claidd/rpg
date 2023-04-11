@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d73d0ac-ab8d-44d2-9578-fbdae8e779c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/rpg/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpg/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpg/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpg/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpg/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpg/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpg/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpg/src/main/java/claid/com/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpg/src/test/java/claid/com/AppTest.java" afterDir="false" />
+    <list default="true" id="1d73d0ac-ab8d-44d2-9578-fbdae8e779c4" name="Changes" comment="1. Create hero and his moving">
+      <change afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/model/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/model/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/model/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/src/com/mygdx/game/DesktopLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/src/com/mygdx/game/DesktopLauncher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +30,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/rpg" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2OGlruu1Fg3bKt69knp78UHMOCn" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,7 +45,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "D:/Java/Game/build.gradle",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -75,11 +75,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681195002617</updated>
-      <workItem from="1681195003896" duration="4588000" />
+      <workItem from="1681195003896" duration="7216000" />
     </task>
+    <task id="LOCAL-00001" summary="1. Create hero and his moving">
+      <created>1681207850610</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681207850610</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1. Create hero and his moving" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Create hero and his moving" />
   </component>
 </project>
