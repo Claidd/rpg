@@ -19,11 +19,19 @@ public class Hero extends GameCharacter{
 
     public void takeDamage(float amount){
         hp -= amount;
+        damageEffectTimer += 0.5f;
+        if (damageEffectTimer > 1.0f) damageEffectTimer = 1.0f;
     }
 
     @Override
     public void render(SpriteBatch batch){
+        //Покраска при уроне
+        if (damageEffectTimer > 0){
+            batch.setColor(1,1-damageEffectTimer,1-damageEffectTimer,1);
+        }
         batch.draw(texture,position.x - 40.0f, position.y - 40.0f);
+        batch.setColor(1,1,1,1);
+        //Покраска при уроне
 
         batch.setColor(0,0,0,1);
         // обновление уровня hp.
@@ -36,6 +44,10 @@ public class Hero extends GameCharacter{
 
     @Override
     public void update(float dt){
+        //шок таймS
+        damageEffectTimer -= dt;
+        if (damageEffectTimer < 0.0f) damageEffectTimer = 0.0f;
+
         if (Gdx.input.isKeyPressed(Input.Keys.W)){
             position.y += speed * dt;
         }

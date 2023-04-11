@@ -12,6 +12,7 @@ public abstract class GameCharacter {
     float speed;
     float hp, hpMax;
     GameScreen gameScreen;
+    float damageEffectTimer;
 
     public Vector2 getPosition() {
         return position;
