@@ -12,14 +12,13 @@ public class Monster extends GameCharacter {
     private Vector2 direction;
     private Vector2 temp;
     private float moveTimer;
-    private float attackTimer;
-    private float attackPeriod;
     private float activityRadius;
-    private float attackRadius;
+
 
 
     public Monster(GameScreen gameScreen) {
         this.texture = new Texture("skelet.png");
+        this.textureHp = new Texture("hp.png");
         this.position = new Vector2(400,200);
         this.direction = new Vector2(0,0);
         this.temp = new Vector2(0,0);
@@ -28,18 +27,18 @@ public class Monster extends GameCharacter {
         this.speed = 40.0f;
         this.gameScreen = gameScreen;
         this.activityRadius = 200.0f;
-        this.attackPeriod = 0.4f;
-        this.attackRadius = 50.0f;
+        this.weapon = new Weapon("sword", 50, 1.0f, 3.0f);
+
     }
 
-
-@Override
-    public void render(SpriteBatch batch){
-        batch.draw(texture,position.x - 40.0f,position.y - 40.0f);
-    }
 
     @Override
     public void update(float dt){
+
+        //шок таймS
+        damageEffectTimer -= dt;
+        if (damageEffectTimer < 0.0f) damageEffectTimer = 0.0f;
+
         float dst = gameScreen.getHero().getPosition().dst(this.position);
 
         //=======ДВИЖЕНИЕ==========
@@ -68,11 +67,11 @@ public class Monster extends GameCharacter {
         }//=======ДВИЖЕНИЕ==========
 
         //========АТАКА============
-        if (dst < attackRadius){
+        if (dst < weapon.getAttackRadius()){
             attackTimer += dt;
-            if (attackTimer >= attackPeriod){
+            if (attackTimer >= weapon.getAttackPeriod()){
                 attackTimer = 0.0f;
-                gameScreen.getHero().takeDamage(10.0f);
+                gameScreen.getHero().takeDamage(weapon.getDamage());
             }
         } //========АТАКА============
 

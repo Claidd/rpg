@@ -29,7 +29,7 @@ public class GameScreen {
 
     //Метод для преднастройки игры.
     public void create(){
-        hero = new Hero();
+        hero = new Hero(this);
         monster = new Monster(this);
     }
 
