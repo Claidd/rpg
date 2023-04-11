@@ -1,11 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
-import com.mygdx.game.model.Hero;
-import com.mygdx.game.model.Monster;
 
 public class MyGdxGame extends ApplicationAdapter {
 
@@ -26,6 +22,7 @@ public class MyGdxGame extends ApplicationAdapter {
     13. Драка с монстрами
     14. Полоска здоровья
     15. Привязать логику к хп героя
+    16. Перенос на вектор +
      */
 	SpriteBatch batch;
 	GameScreen gameScreen;

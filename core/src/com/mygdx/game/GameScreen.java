@@ -3,8 +3,8 @@ package com.mygdx.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
-import com.mygdx.game.model.Hero;
-import com.mygdx.game.model.Monster;
+import com.mygdx.game.characters.Hero;
+import com.mygdx.game.characters.Monster;
 
 public class GameScreen {
 
@@ -46,7 +46,11 @@ public class GameScreen {
     public void update(float dt){
         hero.update(dt);
         monster.update(dt);
-        float dst = (float) Math.sqrt((hero.getX() - monster.getX()) * (hero.getX() - monster.getX()));
-        if (dst < 40.0f) hero.takeDamage(dt * 10.0f);
+
+        if (hero.getPosition().dst(monster.getPosition()) < 40) {
+            hero.takeDamage(dt * 10.0f);
+        }
+//        float dst = (float) Math.sqrt((hero.getX() - monster.getX()) * (hero.getX() - monster.getX()));
+//        if (dst < 40.0f) hero.takeDamage(dt * 10.0f);
     }
 }
