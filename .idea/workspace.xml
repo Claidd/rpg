@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d73d0ac-ab8d-44d2-9578-fbdae8e779c4" name="Changes" comment="7. Add damageEffect">
-      <change afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Weapon.java" afterDir="false" />
+    <list default="true" id="1d73d0ac-ab8d-44d2-9578-fbdae8e779c4" name="Changes" comment="8. Add Weapon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/GameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/GameCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Hero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Игровые объекты.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Игровые объекты.psd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1681195002617</updated>
       <workItem from="1681195003896" duration="8837000" />
-      <workItem from="1681214945753" duration="11271000" />
+      <workItem from="1681214945753" duration="15310000" />
     </task>
     <task id="LOCAL-00001" summary="1. Create hero and his moving">
       <created>1681207850610</created>
@@ -127,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681231268880</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="8. Add Weapon">
+      <created>1681233093860</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681233093860</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +160,7 @@
     <MESSAGE value="5. Refactoring and add AbstractClass Characters" />
     <MESSAGE value="6. Add HP board" />
     <MESSAGE value="7. Add damageEffect" />
-    <option name="LAST_COMMIT_MESSAGE" value="7. Add damageEffect" />
+    <MESSAGE value="8. Add Weapon" />
+    <option name="LAST_COMMIT_MESSAGE" value="8. Add Weapon" />
   </component>
 </project>

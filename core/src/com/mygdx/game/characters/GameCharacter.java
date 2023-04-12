@@ -1,6 +1,7 @@
 package com.mygdx.game.characters;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.GameScreen;
@@ -22,7 +23,7 @@ public abstract class GameCharacter {
 
     public abstract void update(float dt);
 
-    public  void render(SpriteBatch batch){
+    public  void render(SpriteBatch batch, BitmapFont font24){
         //Покраска при уроне
         if (damageEffectTimer > 0){
             batch.setColor(1,1-damageEffectTimer,1-damageEffectTimer,1);
@@ -38,6 +39,10 @@ public abstract class GameCharacter {
         // обновление уровня hp.
         batch.draw(textureHp, position.x - 40, position.y + 90 - 40, 0,0, hp / hpMax * 80, 5,1,1,0,0,0,80,5,false,false);
         batch.setColor(1,1,1,1);
+
+        //Добавляем текст. Берем наш фон и рисуем в батче значение hp переводя в инт, а потом в строку. Устанавливаем позицию
+        //устанавливаем длину в 80пкс, центруем (выравниваем по горизонтали), выключаем перенос по словам.
+        font24.draw(batch, String.valueOf((int) hp), position.x -40, position.y + 80 - 22, 80, 1, false);
     }
 
     //Проверка на выход персонажа за границы карты

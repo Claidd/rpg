@@ -19,7 +19,7 @@ public class Hero extends GameCharacter{
         this.speed = 100.0f;
         this.hpMax = 100.0f;
         this.hp = hpMax;
-        this.weapon = new Weapon("Меч истины", 50, 1.0f, 5.0f);
+        this.weapon = new Weapon("Меч истины", 70, 1.0f, 5.0f);
     }
 
 

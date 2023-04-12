@@ -28,9 +28,7 @@ public class Monster extends GameCharacter {
         this.gameScreen = gameScreen;
         this.activityRadius = 200.0f;
         this.weapon = new Weapon("sword", 50, 1.0f, 3.0f);
-
     }
-
 
     @Override
     public void update(float dt){

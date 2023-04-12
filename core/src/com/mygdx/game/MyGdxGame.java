@@ -23,6 +23,10 @@ public class MyGdxGame extends ApplicationAdapter {
     14. Полоска здоровья
     15. Привязать логику к хп героя
     16. Перенос на вектор +
+    17. Инвентарь
+    18. Всплывающие текста
+    19. Хот бар
+    20. Камера
      */
 	SpriteBatch batch;
 	GameScreen gameScreen;
