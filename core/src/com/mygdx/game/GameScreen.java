@@ -18,7 +18,7 @@ public class GameScreen {
     private BitmapFont font24;
     private Hero hero;
     private Monster monster;
-    private Texture grass;
+    private  Map map;
     private List<GameCharacter> allCharacters;
     private List<Monster> allMonsters;
     private Comparator<GameCharacter> drawOrderComporator;
@@ -40,8 +40,13 @@ public class GameScreen {
         return allMonsters;
     }
 
+    public Map getMap() {
+        return map;
+    }
+
     //Метод для преднастройки игры.
     public void create(){
+        map = new Map();
         allCharacters = new ArrayList<>();
         allMonsters = new ArrayList<>();
         hero = new Hero(this);
@@ -49,6 +54,7 @@ public class GameScreen {
         allCharacters.addAll(Arrays.asList(
                 hero,
                 monster,
+                new Monster(this),
                 new Monster(this)
         ));
         for (int i = 0; i < allCharacters.size(); i++) {
@@ -57,7 +63,7 @@ public class GameScreen {
             }
         }
         font24 = new BitmapFont(Gdx.files.internal("font2.fnt"));
-        grass = new Texture("grass.png");
+
         drawOrderComporator = new Comparator<GameCharacter>() {
             @Override
             public int compare(GameCharacter o1, GameCharacter o2) {
@@ -71,11 +77,7 @@ public class GameScreen {
         update(dt);
         ScreenUtils.clear(0, 0.4f, 0, 1);
         batch.begin();
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 9; j++) {
-                batch.draw(grass, i * 80, j * 80);
-            }
-        }
+        map.render(batch);
 
         //Отрисовка героев
 //        hero.render(batch, font24);

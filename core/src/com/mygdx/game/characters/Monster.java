@@ -9,8 +9,8 @@ import com.mygdx.game.GameScreen;
 
 public class Monster extends GameCharacter {
 
-    private Vector2 direction;
-    private Vector2 temp;
+
+
     private float moveTimer;
     private float activityRadius;
 
@@ -38,21 +38,15 @@ public class Monster extends GameCharacter {
         if (damageEffectTimer < 0.0f) damageEffectTimer = 0.0f;
 
         float dst = gameScreen.getHero().getPosition().dst(this.position);
-
         //=======ДВИЖЕНИЕ==========
         //Если расстояние до героя меньше 40, то монстр двигается к герою.
         if (dst < activityRadius) {
-            temp.set(gameScreen.getHero().getPosition());
-            //чтобы получить направление от монстра к герою нужно вычесть из координат героя координаты монстра.
-            temp.sub(this.position);
-            temp.nor();
-            position.mulAdd(temp, speed * dt);
+            direction.set(gameScreen.getHero().getPosition()).sub(this.position).nor();
         }
         else {
             //Устанавливаем новое направление движения. Не обнуляем, а добавляем к текущей позиции новое значение direction
             //умноженной на скорость. Получается при каждом кадре мы должны позицию изменить прибавив вектор направления
             //умноженный на скорость и от масштабированный на delta time, которое прошло с предыдущего кадра.
-            position.mulAdd(direction, speed * dt);
             moveTimer -= dt;
             if (moveTimer < 0.0f) {
                 //По истечению таймера переустанавливаем таймер на рандомное время от 3 до 4-х секунд
@@ -62,6 +56,11 @@ public class Monster extends GameCharacter {
                 //Нормируем вектор, что бы его квадратный корень был равен единицы, а не единицы с дробной частью
                 direction.nor();
             }
+        }
+        temp.set(position).mulAdd(direction, speed * dt);
+        //чтобы получить направление от монстра к герою нужно вычесть из координат героя координаты монстра.
+        if (gameScreen.getMap().isCellPassable(temp)){
+            position.set(temp);
         }//=======ДВИЖЕНИЕ==========
 
         //========АТАКА============

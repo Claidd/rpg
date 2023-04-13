@@ -15,10 +15,12 @@ public class Hero extends GameCharacter{
         this.gameScreen = gameScreen;
         this.texture = new Texture("knight.png");
         this.textureHp = new Texture("hp.png");
-        this.position = new Vector2(200,200);
+        this.direction = new Vector2(0,0);
+        this.position = new Vector2(200,300);
         this.speed = 100.0f;
         this.hpMax = 100.0f;
         this.hp = hpMax;
+        this.temp = new Vector2(0,0);
         this.weapon = new Weapon("Меч истины", 70, 1.0f, 20.0f);
     }
 
@@ -52,19 +54,27 @@ public class Hero extends GameCharacter{
         damageEffectTimer -= dt;
         if (damageEffectTimer < 0.0f) damageEffectTimer = 0.0f;
 
+        //Движение
+            direction.set(0,0);
         if (Gdx.input.isKeyPressed(Input.Keys.W)){
-            position.y += speed * dt;
+            direction.y = 1.0f;
         }
         if (Gdx.input.isKeyPressed(Input.Keys.S)){
-            position.y -= speed * dt;
+            direction.y = -1.0f;
         }
         if (Gdx.input.isKeyPressed(Input.Keys.D)){
+            direction.x = 1.0f;
             this.texture = new Texture("knight.png");
-            position.x += speed * dt;
         }
         if (Gdx.input.isKeyPressed(Input.Keys.A)){
+            direction.x = -1.0f;
             this.texture = new Texture("knightBack.png");
-            position.x -= speed * dt;
+        }
+
+
+        temp.set(position).mulAdd(direction,speed * dt);
+        if (gameScreen.getMap().isCellPassable(temp)){
+            position.set(temp);
         }
         //Проверка на выход за границы карты
         checkScreenBounds();

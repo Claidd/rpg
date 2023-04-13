@@ -12,6 +12,8 @@ public abstract class GameCharacter {
     Vector2 position;
     float speed;
     float hp, hpMax;
+    Vector2 direction;
+    Vector2 temp;
     GameScreen gameScreen;
     float damageEffectTimer;
     float attackTimer;
