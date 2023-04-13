@@ -20,6 +20,9 @@ public class Monster extends GameCharacter {
         this.texture = new Texture("skelet.png");
         this.textureHp = new Texture("hp.png");
         this.position = new Vector2(MathUtils.random(0, 1240), MathUtils.random(0, 680));
+        if (!gameScreen.getMap().isCellPassable(position)){
+            this.position.set(MathUtils.random(0, 1240), MathUtils.random(0, 680));
+        }
         this.direction = new Vector2(0,0);
         this.temp = new Vector2(0,0);
         this.hpMax = 40;

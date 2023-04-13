@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.GameScreen;
 
@@ -16,7 +17,10 @@ public class Hero extends GameCharacter{
         this.texture = new Texture("knight.png");
         this.textureHp = new Texture("hp.png");
         this.direction = new Vector2(0,0);
-        this.position = new Vector2(200,300);
+        this.position = new Vector2(MathUtils.random(0, 1240), MathUtils.random(0, 680));
+        if (!gameScreen.getMap().isCellPassable(position)){
+            this.position.set(MathUtils.random(0, 1240), MathUtils.random(0, 680));
+        }
         this.speed = 100.0f;
         this.hpMax = 100.0f;
         this.hp = hpMax;

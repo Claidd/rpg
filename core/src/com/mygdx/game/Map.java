@@ -2,6 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 
 public class Map {
@@ -14,11 +15,8 @@ public class Map {
 
     public Map() {
         data = new byte[CELLS_X][CELLS_Y];
-        for (int i = 0; i < CELLS_X; i+=2) {
-            for (int j = 0; j < CELLS_Y; j+=2) {
-                data[i][j] = 1;
-            }
-
+        for (int i = 0; i < 15; i++) {
+            data[MathUtils.random(0, CELLS_X-1)][MathUtils.random(0, CELLS_Y-1)] = 1;
         }
         textureGrass = new Texture("grass.png");
         textureWall = new Texture("wall.png");
