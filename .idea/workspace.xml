@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d73d0ac-ab8d-44d2-9578-fbdae8e779c4" name="Changes" comment="8. Add Weapon">
+    <list default="true" id="1d73d0ac-ab8d-44d2-9578-fbdae8e779c4" name="Changes" comment="9. Add Text HP and Texture Grass">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/GameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/GameCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Игровые объекты.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Игровые объекты.psd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +48,9 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -77,7 +75,8 @@
       <option name="presentableId" value="Default" />
       <updated>1681195002617</updated>
       <workItem from="1681195003896" duration="8837000" />
-      <workItem from="1681214945753" duration="15310000" />
+      <workItem from="1681214945753" duration="15518000" />
+      <workItem from="1681359620944" duration="818000" />
     </task>
     <task id="LOCAL-00001" summary="1. Create hero and his moving">
       <created>1681207850610</created>
@@ -135,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681233093860</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="9. Add Text HP and Texture Grass">
+      <created>1681275101705</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681275101705</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +167,7 @@
     <MESSAGE value="6. Add HP board" />
     <MESSAGE value="7. Add damageEffect" />
     <MESSAGE value="8. Add Weapon" />
-    <option name="LAST_COMMIT_MESSAGE" value="8. Add Weapon" />
+    <MESSAGE value="9. Add Text HP and Texture Grass" />
+    <option name="LAST_COMMIT_MESSAGE" value="9. Add Text HP and Texture Grass" />
   </component>
 </project>
