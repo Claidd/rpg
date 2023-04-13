@@ -26,13 +26,24 @@ public class Hero extends GameCharacter{
     @Override
     public void update(float dt){
 
-        float dst = gameScreen.getMonster().getPosition().dst(this.position);
+        Monster nearestMonster = null;
+        float minDist = Float.MAX_VALUE;
+        for (int i = 0; i < gameScreen.getAllMonsters().size(); i++) {
+            //Перебираем расстояние до каждого монстра
+            float dst = gameScreen.getAllMonsters().get(i).getPosition().dst(this.position);
+            if (dst < minDist){
+                minDist = dst;
+                nearestMonster = gameScreen.getAllMonsters().get(i);
+            }
+        }
+
+
         //Атака
-        if (dst < weapon.getAttackRadius()){
+        if ( nearestMonster != null && minDist  < weapon.getAttackRadius()){
             attackTimer += dt;
             if (attackTimer > weapon.getAttackPeriod()){
                 attackTimer = 0.0f;
-                gameScreen.getMonster().takeDamage(weapon.getDamage());
+                nearestMonster.takeDamage(weapon.getDamage());
             }
         }
         //Атака

@@ -20,6 +20,7 @@ public class GameScreen {
     private Monster monster;
     private Texture grass;
     private List<GameCharacter> allCharacters;
+    private List<Monster> allMonsters;
     private Comparator<GameCharacter> drawOrderComporator;
 
 
@@ -35,14 +36,26 @@ public class GameScreen {
         return monster;
     }
 
-
+    public List<Monster> getAllMonsters() {
+        return allMonsters;
+    }
 
     //Метод для преднастройки игры.
     public void create(){
         allCharacters = new ArrayList<>();
+        allMonsters = new ArrayList<>();
         hero = new Hero(this);
         monster = new Monster(this);
-        allCharacters.addAll(Arrays.asList(hero,monster));
+        allCharacters.addAll(Arrays.asList(
+                hero,
+                monster,
+                new Monster(this)
+        ));
+        for (int i = 0; i < allCharacters.size(); i++) {
+            if (allCharacters.get(i) instanceof Monster){
+                allMonsters.add((Monster) allCharacters.get(i));
+            }
+        }
         font24 = new BitmapFont(Gdx.files.internal("font2.fnt"));
         grass = new Texture("grass.png");
         drawOrderComporator = new Comparator<GameCharacter>() {
@@ -75,7 +88,10 @@ public class GameScreen {
     }
 
     public void update(float dt){
-        hero.update(dt);
-        monster.update(dt);
+        for (int i = 0; i < allCharacters.size(); i++) {
+            allCharacters.get(i).update(dt);
+        }
+//        hero.update(dt);
+//        monster.update(dt);
     }
 }

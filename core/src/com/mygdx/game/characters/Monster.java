@@ -19,7 +19,7 @@ public class Monster extends GameCharacter {
     public Monster(GameScreen gameScreen) {
         this.texture = new Texture("skelet.png");
         this.textureHp = new Texture("hp.png");
-        this.position = new Vector2(400,200);
+        this.position = new Vector2(MathUtils.random(0, 1240), MathUtils.random(0, 680));
         this.direction = new Vector2(0,0);
         this.temp = new Vector2(0,0);
         this.hpMax = 40;
