@@ -93,5 +93,13 @@ public class GameScreen {
         }
 //        hero.update(dt);
 //        monster.update(dt);
+        for (int i = 0; i < allMonsters.size(); i++) {
+            Monster currentMonster = allMonsters.get(i);
+            if (!currentMonster.isAlive()){
+                allMonsters.remove(currentMonster);
+                allCharacters.remove(currentMonster);
+            }
+
+        }
     }
 }

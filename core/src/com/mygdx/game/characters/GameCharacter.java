@@ -17,6 +17,10 @@ public abstract class GameCharacter {
     float attackTimer;
     Weapon weapon;
 
+    public boolean isAlive(){
+        return hp > 0;
+    }
+
     public Vector2 getPosition() {
         return position;
     }
