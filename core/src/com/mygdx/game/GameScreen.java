@@ -57,6 +57,8 @@ public class GameScreen {
                 hero,
                 monster,
                 new Monster(this),
+                new Monster(this),
+                new Monster(this),
                 new Monster(this)
         ));
         for (int i = 0; i < allCharacters.size(); i++) {
@@ -89,6 +91,7 @@ public class GameScreen {
         }
 
         itemsEmitter.render(batch);
+        hero.renderHUD(batch, font24);
         batch.end();
     }
 
@@ -104,6 +107,16 @@ public class GameScreen {
                 allMonsters.remove(currentMonster);
                 allCharacters.remove(currentMonster);
                 itemsEmitter.generateRandomItem(currentMonster.getPosition().x, currentMonster.getPosition().y, 5, 0.6f );
+                hero.killMonster(currentMonster);
+            }
+        }
+        for (int i = 0; i < itemsEmitter.getItems().length; i++) {
+            Item it = itemsEmitter.getItems()[i];
+            if (it.isActive()){
+                float dst = hero.getPosition().dst(it.getPosition());
+                if (dst < 24.0f){
+                    hero.useItem(it);
+                }
             }
         }
         itemsEmitter.update(dt);
