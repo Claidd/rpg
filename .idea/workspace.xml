@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d73d0ac-ab8d-44d2-9578-fbdae8e779c4" name="Changes" comment="11. Add Wall">
+    <list default="true" id="1d73d0ac-ab8d-44d2-9578-fbdae8e779c4" name="Changes" comment="12. Random start characters coordinat">
+      <change afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/ItemsEmitter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/GameScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Игровые объекты.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Игровые объекты.psd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +81,7 @@
       <workItem from="1681195003896" duration="8837000" />
       <workItem from="1681214945753" duration="15518000" />
       <workItem from="1681359620944" duration="6014000" />
-      <workItem from="1681383294823" duration="405000" />
+      <workItem from="1681383294823" duration="6400000" />
     </task>
     <task id="LOCAL-00001" summary="1. Create hero and his moving">
       <created>1681207850610</created>
@@ -172,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681365642072</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="12. Random start characters coordinat">
+      <created>1681383830507</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681383830507</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +212,7 @@
     <MESSAGE value="9. Add List Monster" />
     <MESSAGE value="10. Add kill Monsters" />
     <MESSAGE value="11. Add Wall" />
-    <option name="LAST_COMMIT_MESSAGE" value="11. Add Wall" />
+    <MESSAGE value="12. Random start characters coordinat" />
+    <option name="LAST_COMMIT_MESSAGE" value="12. Random start characters coordinat" />
   </component>
 </project>

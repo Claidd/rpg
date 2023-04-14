@@ -36,7 +36,7 @@ public class Map {
             for (int j = 0; j < 9; j++) {
                 batch.draw(textureGrass, i * 80, j * 80);
                 if (data[i][j] == 1){
-                    batch.draw(textureWall,i * 80, j * 80 );
+                    batch.draw(textureWall,i * 80, j * 80);
                 }
             }
         }

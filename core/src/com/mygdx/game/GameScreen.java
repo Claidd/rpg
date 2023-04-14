@@ -19,6 +19,7 @@ public class GameScreen {
     private Hero hero;
     private Monster monster;
     private  Map map;
+    private ItemsEmitter itemsEmitter;
     private List<GameCharacter> allCharacters;
     private List<Monster> allMonsters;
     private Comparator<GameCharacter> drawOrderComporator;
@@ -47,6 +48,7 @@ public class GameScreen {
     //Метод для преднастройки игры.
     public void create(){
         map = new Map();
+        itemsEmitter = new ItemsEmitter();
         allCharacters = new ArrayList<>();
         allMonsters = new ArrayList<>();
         hero = new Hero(this);
@@ -78,7 +80,6 @@ public class GameScreen {
         ScreenUtils.clear(0, 0.4f, 0, 1);
         batch.begin();
         map.render(batch);
-
         //Отрисовка героев
 //        hero.render(batch, font24);
 //        monster.render(batch, font24);
@@ -86,6 +87,8 @@ public class GameScreen {
         for (int i = 0; i < allCharacters.size(); i++) {
             allCharacters.get(i).render(batch,font24);
         }
+
+        itemsEmitter.render(batch);
         batch.end();
     }
 
@@ -100,8 +103,9 @@ public class GameScreen {
             if (!currentMonster.isAlive()){
                 allMonsters.remove(currentMonster);
                 allCharacters.remove(currentMonster);
+                itemsEmitter.generateRandomItem(currentMonster.getPosition().x, currentMonster.getPosition().y, 5, 0.6f );
             }
-
         }
+        itemsEmitter.update(dt);
     }
 }
