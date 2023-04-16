@@ -19,10 +19,12 @@ public class GameScreen {
     private Hero hero;
     private Monster monster;
     private  Map map;
+    private TextEmitter textEmitter;
     private ItemsEmitter itemsEmitter;
     private List<GameCharacter> allCharacters;
     private List<Monster> allMonsters;
     private Comparator<GameCharacter> drawOrderComporator;
+
 
 
     public GameScreen(SpriteBatch batch) {
@@ -49,6 +51,7 @@ public class GameScreen {
     public void create(){
         map = new Map();
         itemsEmitter = new ItemsEmitter();
+        textEmitter = new TextEmitter();
         allCharacters = new ArrayList<>();
         allMonsters = new ArrayList<>();
         hero = new Hero(this);
@@ -77,6 +80,10 @@ public class GameScreen {
         };
     }
 
+    public TextEmitter getTextEmitter() {
+        return textEmitter;
+    }
+
     public void render(){
         float dt = Gdx.graphics.getDeltaTime();
         update(dt);
@@ -92,6 +99,7 @@ public class GameScreen {
         }
 
         itemsEmitter.render(batch);
+        textEmitter.render(batch,font24);
         hero.renderHUD(batch, font24);
         batch.end();
     }
@@ -121,5 +129,6 @@ public class GameScreen {
             }
         }
         itemsEmitter.update(dt);
+        textEmitter.update(dt);
     }
 }

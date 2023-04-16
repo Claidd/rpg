@@ -111,10 +111,17 @@ public class Hero extends GameCharacter{
     public void useItem(Item it) {
         switch (it.getType()){
             case COINS:
-                coins += MathUtils.random(3,5);
+                int amount = MathUtils.random(3,5);
+                coins += amount;
+                stringHelper.setLength(0);
+                stringHelper.append("coins ").append("+").append(amount);
+                gameScreen.getTextEmitter().setup(it.getPosition().x, it.getPosition().y, stringHelper);
                 break;
             case MEDKIT:
                 hp +=5;
+                stringHelper.setLength(0);
+                stringHelper.append("hp ").append("+5");
+                gameScreen.getTextEmitter().setup(it.getPosition().x, it.getPosition().y, stringHelper);
                 if (hp>hpMax){
                     hp = hpMax;
                 }
