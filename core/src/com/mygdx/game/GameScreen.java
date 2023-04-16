@@ -4,21 +4,28 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.scenes.scene2d.*;
+import com.badlogic.gdx.scenes.scene2d.EventListener;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.mygdx.game.characters.GameCharacter;
 import com.mygdx.game.characters.Hero;
 import com.mygdx.game.characters.Monster;
-import javafx.print.Collation;
+
 
 import java.util.*;
 
 public class GameScreen {
-
+    private Stage stage;
     private SpriteBatch batch;
     private BitmapFont font24;
     private Hero hero;
     private Monster monster;
     private  Map map;
+    private boolean paused;
     private TextEmitter textEmitter;
     private ItemsEmitter itemsEmitter;
     private List<GameCharacter> allCharacters;
@@ -71,6 +78,40 @@ public class GameScreen {
             }
         }
         font24 = new BitmapFont(Gdx.files.internal("font2.fnt"));
+        //КНОПКА
+        stage = new Stage();
+        Skin skin = new Skin();
+        skin.add("simpleButton", new Texture("SimpleButton.png"));
+        TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
+        textButtonStyle.up = skin.getDrawable("simpleButton");
+        textButtonStyle.font = font24;
+        TextButton pauseButton = new TextButton("Pause", textButtonStyle);
+        TextButton exitButton = new TextButton("Exit", textButtonStyle);
+        pauseButton.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                paused = !paused;
+            }
+        });
+        exitButton.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                Gdx.app.exit();
+            }
+        });
+        //Группируем
+        Group menuGroup = new Group();
+        menuGroup.addActor(pauseButton);
+        menuGroup.addActor(exitButton);
+        //позиция кнопки
+        exitButton.setPosition(150, 0);
+        //позиция группы кнопок
+        menuGroup.setPosition(980,680);
+        //можно скрыть видимость
+        //menuGroup.setVisible(false);
+        stage.addActor(menuGroup);
+        Gdx.input.setInputProcessor(stage);
+        //КНОПКА
 
         drawOrderComporator = new Comparator<GameCharacter>() {
             @Override
@@ -100,35 +141,39 @@ public class GameScreen {
 
         itemsEmitter.render(batch);
         textEmitter.render(batch,font24);
+        stage.draw();
         hero.renderHUD(batch, font24);
         batch.end();
     }
 
-    public void update(float dt){
-        for (int i = 0; i < allCharacters.size(); i++) {
-            allCharacters.get(i).update(dt);
-        }
+    public void update(float dt) {
+        if (!paused) {
+            for (int i = 0; i < allCharacters.size(); i++) {
+                allCharacters.get(i).update(dt);
+            }
 //        hero.update(dt);
 //        monster.update(dt);
-        for (int i = 0; i < allMonsters.size(); i++) {
-            Monster currentMonster = allMonsters.get(i);
-            if (!currentMonster.isAlive()){
-                allMonsters.remove(currentMonster);
-                allCharacters.remove(currentMonster);
-                itemsEmitter.generateRandomItem(currentMonster.getPosition().x, currentMonster.getPosition().y, 5, 0.6f );
-                hero.killMonster(currentMonster);
-            }
-        }
-        for (int i = 0; i < itemsEmitter.getItems().length; i++) {
-            Item it = itemsEmitter.getItems()[i];
-            if (it.isActive()){
-                float dst = hero.getPosition().dst(it.getPosition());
-                if (dst < 24.0f){
-                    hero.useItem(it);
+            for (int i = 0; i < allMonsters.size(); i++) {
+                Monster currentMonster = allMonsters.get(i);
+                if (!currentMonster.isAlive()) {
+                    allMonsters.remove(currentMonster);
+                    allCharacters.remove(currentMonster);
+                    itemsEmitter.generateRandomItem(currentMonster.getPosition().x, currentMonster.getPosition().y, 5, 0.6f);
+                    hero.killMonster(currentMonster);
                 }
             }
+            for (int i = 0; i < itemsEmitter.getItems().length; i++) {
+                Item it = itemsEmitter.getItems()[i];
+                if (it.isActive()) {
+                    float dst = hero.getPosition().dst(it.getPosition());
+                    if (dst < 24.0f) {
+                        hero.useItem(it);
+                    }
+                }
+            }
+            itemsEmitter.update(dt);
+            textEmitter.update(dt);
+            stage.act(dt);
         }
-        itemsEmitter.update(dt);
-        textEmitter.update(dt);
     }
 }
