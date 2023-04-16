@@ -18,7 +18,7 @@ public class ItemsEmitter {
         for (int i = 0; i < items.length; i++) {
             items[i] = new Item();
         }
-        texture = new Texture("gold.png");
+        texture = new Texture("Items.png");
         regions = new TextureRegion(texture).split(32,32)[0];
     }
 

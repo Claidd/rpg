@@ -113,6 +113,12 @@ public class Hero extends GameCharacter{
             case COINS:
                 coins += MathUtils.random(3,5);
                 break;
+            case MEDKIT:
+                hp +=5;
+                if (hp>hpMax){
+                    hp = hpMax;
+                }
+                break;
         }
         it.deactivate();
     }
