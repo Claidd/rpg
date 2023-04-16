@@ -9,17 +9,22 @@ public class Map {
     public static final int CELLS_X = 16;
     public static final int CELLS_Y = 9;
     public static final int CELLS_SIZE = 80;
-    private Texture textureGrass;
-    private Texture textureWall;
+    private final Texture textureGrass;
+    private final Texture textureWall;
+    private final Texture textureTree;
     byte[][] data;
 
     public Map() {
         data = new byte[CELLS_X][CELLS_Y];
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 10; i++) {
             data[MathUtils.random(0, CELLS_X-1)][MathUtils.random(0, CELLS_Y-1)] = 1;
         }
+        for (int i = 0; i < 20; i++) {
+            data[MathUtils.random(0, CELLS_X-1)][MathUtils.random(0, CELLS_Y-1)] = 2;
+        }
         textureGrass = new Texture("grass.png");
-        textureWall = new Texture("wall.png");
+        textureWall = new Texture("stone7.png");
+        textureTree = new Texture("tree.png");
 
 
     }
@@ -38,7 +43,12 @@ public class Map {
                 if (data[i][j] == 1){
                     batch.draw(textureWall,i * 80, j * 80);
                 }
+                if (data[i][j] == 2){
+                    batch.draw(textureTree,i * 80, j * 80);
+                }
             }
         }
+
+
     }
 }

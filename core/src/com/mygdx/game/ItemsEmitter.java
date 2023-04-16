@@ -22,6 +22,10 @@ public class ItemsEmitter {
         regions = new TextureRegion(texture).split(32,32)[0];
     }
 
+    public Item[] getItems() {
+        return items;
+    }
+
     public void render(SpriteBatch batch){
         for (int i = 0; i < items.length; i++) {
             if (items[i].isActive()){

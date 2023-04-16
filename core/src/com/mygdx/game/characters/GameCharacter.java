@@ -59,7 +59,7 @@ public abstract class GameCharacter {
         if (position.y > 680.0f) position.y = 680.0f;
         if (position.y < 40.0f) position.y = 40.0f;
         //Не фиксированные границы карты
-//            if (position.x > 1280) position.x = 0.0f;
+        //            if (position.x > 1280) position.x = 0.0f;
     }
 
     public void takeDamage(float amount){
@@ -67,4 +67,18 @@ public abstract class GameCharacter {
         damageEffectTimer += 0.5f;
         if (damageEffectTimer > 1.0f) damageEffectTimer = 1.0f;
     }
+
+    public void moveForward(float dt){
+        if (gameScreen.getMap().isCellPassable(temp.set(position).mulAdd(direction, speed * dt))){
+            position.set(temp);
+        }
+        else if (gameScreen.getMap().isCellPassable(temp.set(position).mulAdd(direction, speed * dt).set(temp.x, position.y))){
+            position.set(temp);
+            }
+        else if (gameScreen.getMap().isCellPassable(temp.set(position).mulAdd(direction, speed * dt).set(position.x, temp.y))){
+            position.set(temp);
+                }
+        }
 }
+
+

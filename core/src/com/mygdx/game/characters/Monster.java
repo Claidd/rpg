@@ -60,11 +60,13 @@ public class Monster extends GameCharacter {
                 direction.nor();
             }
         }
-        temp.set(position).mulAdd(direction, speed * dt);
-        //чтобы получить направление от монстра к герою нужно вычесть из координат героя координаты монстра.
-        if (gameScreen.getMap().isCellPassable(temp)){
-            position.set(temp);
-        }//=======ДВИЖЕНИЕ==========
+//        temp.set(position).mulAdd(direction, speed * dt);
+//        //чтобы получить направление от монстра к герою нужно вычесть из координат героя координаты монстра.
+//        if (gameScreen.getMap().isCellPassable(temp)){
+//            position.set(temp);
+//        }
+        moveForward(dt);
+        //=======ДВИЖЕНИЕ==========
 
         //========АТАКА============
         if (dst < weapon.getAttackRadius()){

@@ -59,6 +59,7 @@ public class GameScreen {
                 new Monster(this),
                 new Monster(this),
                 new Monster(this),
+                new Monster(this),
                 new Monster(this)
         ));
         for (int i = 0; i < allCharacters.size(); i++) {
