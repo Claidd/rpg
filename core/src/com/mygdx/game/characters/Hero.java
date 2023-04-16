@@ -17,7 +17,7 @@ public class Hero extends GameCharacter{
     private int level;
     private int exp;
     private TextureRegion regions;
-    private int[] expTo = {0, 0, 300, 500, 1000, 1500, 3000, 5000};
+    private int[] expTo = {0, 0, 300, 500, 1000, 1500, 3000, 5000,10000,20000};
 
     public Hero(GameScreen gameScreen) {
         this.name = "Sir Knight";

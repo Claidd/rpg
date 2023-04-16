@@ -29,6 +29,7 @@ public class GameScreen {
     private  Map map;
     private boolean paused;
     private Music music;
+    private float spavnTimer;
     private TextEmitter textEmitter;
     private ItemsEmitter itemsEmitter;
     private List<GameCharacter> allCharacters;
@@ -157,6 +158,13 @@ public class GameScreen {
 
     public void update(float dt) {
         if (!paused) {
+            spavnTimer += dt;
+            if (spavnTimer > 5.0f){
+                Monster monster = new Monster(this);
+                allCharacters.add(monster);
+                allMonsters.add(monster);
+                spavnTimer = 0.0f;
+            }
             music.setLooping(true);
             music.setVolume(0.01f);
             music.play();
