@@ -29,7 +29,7 @@ public class Monster extends GameCharacter {
         this.speed = 40.0f;
         this.gameScreen = gameScreen;
         this.activityRadius = 200.0f;
-        this.weapon = new Weapon("sword", 50, 1.0f, 3.0f);
+        this.weapon = new Weapon("sword", 50, 1.0f, 30.0f);
     }
 
     @Override

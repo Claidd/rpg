@@ -1,6 +1,8 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -26,6 +28,7 @@ public class GameScreen {
     private Monster monster;
     private  Map map;
     private boolean paused;
+    private Music music;
     private TextEmitter textEmitter;
     private ItemsEmitter itemsEmitter;
     private List<GameCharacter> allCharacters;
@@ -57,6 +60,8 @@ public class GameScreen {
     //Метод для преднастройки игры.
     public void create(){
         map = new Map();
+        music = Gdx.audio.newMusic(Gdx.files.internal("1.mp3"));
+
         itemsEmitter = new ItemsEmitter();
         textEmitter = new TextEmitter();
         allCharacters = new ArrayList<>();
@@ -66,6 +71,8 @@ public class GameScreen {
         allCharacters.addAll(Arrays.asList(
                 hero,
                 monster,
+                new Monster(this),
+                new Monster(this),
                 new Monster(this),
                 new Monster(this),
                 new Monster(this),
@@ -91,6 +98,7 @@ public class GameScreen {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 paused = !paused;
+                music.pause();
             }
         });
         exitButton.addListener(new ClickListener(){
@@ -126,6 +134,7 @@ public class GameScreen {
     }
 
     public void render(){
+
         float dt = Gdx.graphics.getDeltaTime();
         update(dt);
         ScreenUtils.clear(0, 0.4f, 0, 1);
@@ -148,6 +157,9 @@ public class GameScreen {
 
     public void update(float dt) {
         if (!paused) {
+            music.setLooping(true);
+            music.setVolume(0.01f);
+            music.play();
             for (int i = 0; i < allCharacters.size(); i++) {
                 allCharacters.get(i).update(dt);
             }

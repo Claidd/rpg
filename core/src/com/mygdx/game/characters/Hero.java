@@ -5,6 +5,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.GameScreen;
@@ -15,9 +16,8 @@ public class Hero extends GameCharacter{
     private int coins;
     private int level;
     private int exp;
-    private int[] expTo = {0, 0, 100, 200, 300, 500, 1000, 5000};
-
-
+    private TextureRegion regions;
+    private int[] expTo = {0, 0, 300, 500, 1000, 1500, 3000, 5000};
 
     public Hero(GameScreen gameScreen) {
         this.name = "Sir Knight";
