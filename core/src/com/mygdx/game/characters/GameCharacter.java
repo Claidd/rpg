@@ -14,10 +14,16 @@ public abstract class GameCharacter {
     float hp, hpMax;
     Vector2 direction;
     Vector2 temp;
+    StringBuilder stringHelper;
     GameScreen gameScreen;
     float damageEffectTimer;
     float attackTimer;
     Weapon weapon;
+
+    public GameCharacter() {
+        temp = new Vector2(0,0);
+        stringHelper = new StringBuilder();
+    }
 
     public boolean isAlive(){
         return hp > 0;
@@ -48,7 +54,9 @@ public abstract class GameCharacter {
 
         //Добавляем текст. Берем наш фон и рисуем в батче значение hp переводя в инт, а потом в строку. Устанавливаем позицию
         //устанавливаем длину в 80пкс, центруем (выравниваем по горизонтали), выключаем перенос по словам.
-        font24.draw(batch, String.valueOf((int) hp), position.x -40, position.y + 80 - 22, 80, 1, false);
+        stringHelper.setLength(0);
+        stringHelper.append((int)hp);
+        font24.draw(batch, stringHelper, position.x -40, position.y + 80 - 22, 80, 1, false);
     }
 
     //Проверка на выход персонажа за границы карты

@@ -24,7 +24,6 @@ public class Monster extends GameCharacter {
             this.position.set(MathUtils.random(0, 1240), MathUtils.random(0, 680));
         }
         this.direction = new Vector2(0,0);
-        this.temp = new Vector2(0,0);
         this.hpMax = 40;
         this.hp = hpMax;
         this.speed = 40.0f;

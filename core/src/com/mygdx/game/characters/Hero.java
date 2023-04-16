@@ -11,6 +11,7 @@ import com.mygdx.game.GameScreen;
 import com.mygdx.game.Item;
 
 public class Hero extends GameCharacter{
+    private String name;
     private int coins;
     private int level;
     private int exp;
@@ -19,6 +20,7 @@ public class Hero extends GameCharacter{
 
 
     public Hero(GameScreen gameScreen) {
+        this.name = "Sir Knight";
         this.gameScreen = gameScreen;
         this.level = 1;
         this.texture = new Texture("knight.png");
@@ -31,12 +33,15 @@ public class Hero extends GameCharacter{
         this.speed = 100.0f;
         this.hpMax = 100.0f;
         this.hp = hpMax;
-        this.temp = new Vector2(0,0);
         this.weapon = new Weapon("Меч истины", 70, 1.0f, 20.0f);
     }
 
     public void renderHUD(SpriteBatch batch, BitmapFont font){
-        font.draw(batch, "Knight Jhon \n EXP: " + exp + "/" + expTo[level+1] + " LEVEL: " + level + "\nCOINS: " + coins, 20, 700);
+        stringHelper.setLength(0);
+        stringHelper.append("Knight: ").append(name).append("\n").append("Level: ").append(level).append("\n")
+                        .append("Exp: ").append(exp).append(" / ").append(expTo[level+1]).append("\n")
+                        .append("Coins: ").append(coins);
+        font.draw(batch, stringHelper, 20, 700);
     }
 
     public void killMonster(Monster monster){

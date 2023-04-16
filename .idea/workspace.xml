@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d73d0ac-ab8d-44d2-9578-fbdae8e779c4" name="Changes" comment="14. Add LevelUp">
+    <list default="true" id="1d73d0ac-ab8d-44d2-9578-fbdae8e779c4" name="Changes" comment="15. Add MoveForward">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/gold.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/gold.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/tree.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/tree.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/GameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/ItemsEmitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/ItemsEmitter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/GameCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Hero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/characters/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Игровые объекты.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Игровые объекты.psd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +80,7 @@
       <workItem from="1681214945753" duration="15518000" />
       <workItem from="1681359620944" duration="6014000" />
       <workItem from="1681383294823" duration="13406000" />
-      <workItem from="1681618038620" duration="1342000" />
+      <workItem from="1681618038620" duration="2602000" />
     </task>
     <task id="LOCAL-00001" summary="1. Create hero and his moving">
       <created>1681207850610</created>
@@ -200,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681458559709</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="15. Add MoveForward">
+      <created>1681619502272</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1681619502272</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +235,7 @@
     <MESSAGE value="12. Random start characters coordinat" />
     <MESSAGE value="13. Add Coins" />
     <MESSAGE value="13. Add LevelUp" />
-    <option name="LAST_COMMIT_MESSAGE" value="13. Add LevelUp" />
+    <MESSAGE value="15. Add MoveForward" />
+    <option name="LAST_COMMIT_MESSAGE" value="15. Add MoveForward" />
   </component>
 </project>
